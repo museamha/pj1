@@ -1,0 +1,19 @@
+{% extends "cars/base.html" %}
+
+{% block title %}
+{{car.Proname}}
+{% endblock title %}
+
+{% block content %}
+<section>
+      <div>
+        <img src="{{ car.image.url }}" alt="{{ car.Proname }}" width="300" height="200">
+        <h2>{{ car.Proname }}</h2>
+        <h3>{{ car.yearofpp }}</h3>
+        <h3>{{ car.stok }} units</h3>
+        <h3>{{ car.sped }} km/hr</h3>
+        <h3>{{ car.phone_number }}</h3>
+        <h3>{{ car.discr }}</h3>
+    </div>
+</section>
+{% endblock content %}

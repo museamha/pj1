@@ -1,0 +1,28 @@
+{% extends "cars/base.html" %}
+{% load static %}
+
+{% block cssfiles %}
+  <link rel="stylesheet" href="{% static 'cars/home.css' %}">
+{% endblock cssfiles %}
+
+
+{% block title %}
+  all cars
+{% endblock title %}
+
+
+{% block content %}
+<section>
+  {% for car in cars %}
+    <div>
+      <a href="{% url "detail-page" car.slug %}">
+      <img src="{{ car.image.url }}" alt="{{ car.Proname }}" width="300" height="200">
+      <h2>{{ car.Proname }}</h2>
+      <h3>{{ car.yearofpp }}</h3>
+      <h3>{{ car.stok }} units</h3>
+    </a>
+    </div>
+  {% endfor %}
+</section>
+{% endblock content %}
+
