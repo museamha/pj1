@@ -1,0 +1,20 @@
+{% extends "cars/base.html" %}
+
+
+{% block title %} 
+incart cars
+{% endblock %} 
+
+
+{% block content %}
+  <section id="stored-posts">
+    {% if not has_posts %}
+      <p>You didn't save any cars in your cart</p>
+    {% endif %}
+    <ul>
+      {% for post in posts %}
+        <li><a href="{% url "detail-page" car.slug %}">{{ car.Proname }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

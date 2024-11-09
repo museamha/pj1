@@ -30,3 +30,5 @@ class car(models.Model):
 class Producer(models.Model):
     name = models.CharField(max_length=20)
     carsp = models.ForeignKey(car, verbose_name="Car", on_delete=models.CASCADE, blank=True, null=True)
+    def __str__(self):
+        return self.name

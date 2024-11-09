@@ -16,4 +16,18 @@
         <h3>{{ car.discr }}</h3>
     </div>
 </section>
+
+<div id="read-later">
+  <form action="{% url "read-later" %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" value="{{ car.id }}" name="car_id">
+    <button>
+      {% if saved_for_later %}
+        Remove from "Read Later" List
+      {% else %}
+        Read Later
+      {% endif %}
+    </button>
+  </form>
+</div>
 {% endblock content %}

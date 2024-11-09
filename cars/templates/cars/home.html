@@ -13,7 +13,7 @@
 
 {% block content %}
 <section>
-  {% for car in cars %}
+  {% for car in allcars %}
     <div>
       <a href="{% url "detail-page" car.slug %}">
       <img src="{{ car.image.url }}" alt="{{ car.Proname }}" width="300" height="200">
