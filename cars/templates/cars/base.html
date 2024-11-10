@@ -7,14 +7,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static "cars/base.css" %}">
+    <title>Welcome</title>
 </head>
 <body>
     <header>
-        <h1><a href="{% url "front-page" %}">mekinas</a></h1>
-        <nav>
-            <a href="{% url "read-later" %}">Stored Posts</a>
-        </nav>
+        <div class="container">
+            <div class="navbar">
+                <a href="{% url "front-page" %}" class="nav-button">home</a>
+                <a href="{% url 'detail-page' car.slug %}" class="nav-button">{{ car.Proname }}</a>
+                <a href="{% url "read-later" %}" class="nav-button">My cart</a>
+                <a href="#" class="nav-button add-button">+ Add</a>
+            </div>
+        </div>        
     </header>
 </body>
 </html>

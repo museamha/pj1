@@ -1,0 +1,36 @@
+
+/* Styling the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #004aad, #00e0ff);
+    padding: 15px 30px;
+    border-radius: 40px;
+}
+
+/* Styling each button */
+.navbar .nav-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Styling the + Add button */
+.navbar .add-button {
+    color: #ffffff;
+    border: 2px dashed #ffffff;
+}
+
+/* Styling container */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

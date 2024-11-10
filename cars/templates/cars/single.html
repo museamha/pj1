@@ -22,10 +22,10 @@
     {% csrf_token %}
     <input type="hidden" value="{{ car.id }}" name="car_id">
     <button>
-      {% if saved_for_later %}
-        Remove from "Read Later" List
+      {% if incart %}
+        Remove from cart
       {% else %}
-        Read Later
+        Add to cart
       {% endif %}
     </button>
   </form>
