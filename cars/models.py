@@ -10,6 +10,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 class car(models.Model):
     Proname = models.CharField(max_length=50)
+    price = models.IntegerField(default=0)
     yearofpp = models.DateField()
     phone_number = PhoneNumberField(null=False, blank=False, unique=True)
     stok = models.IntegerField(validators=[MinValueValidator(1)])
