@@ -1,0 +1,15 @@
+{% extends "cars/base.html" %}
+{% load static %}
+
+{% block title %}
+{{ Producer.name }}
+{% endblock title %}
+
+{% block content %}
+<section>
+    <div>
+        <h2>{{ Producer.name }}<h2>
+        <h2>{{ Producer.carsp }}<h2>
+    </div>
+</section>
+{% endblock content %}

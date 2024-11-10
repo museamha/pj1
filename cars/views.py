@@ -1,7 +1,7 @@
 from django.shortcuts import render , redirect
 from django.views.generic import ListView
 from django.views import View
-from .models import car
+from .models import car, Producer
 from django.http import HttpResponseRedirect
 
 
@@ -59,3 +59,16 @@ class ReadLaterView(View):
 
         request.session["incart"] = incart
         return redirect("read-later")
+    
+class SingleProducersView(ListView):
+    template_name = "cars/produ.html"
+    def get(self, request,name, *args, **kwargs):
+        sing = Producer.objects.get(name=name)
+        context = {"Producer": sing}
+        return render(request,self.template_name, context )
+ 
+class ProducersView(ListView):
+    template_name = "cars/allpp.html"
+    model = Producer
+    ordering = ["-name"]
+    context_object_name = "allcars"
