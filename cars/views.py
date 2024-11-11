@@ -71,4 +71,4 @@ class ProducersView(ListView):
     template_name = "cars/allpp.html"
     model = Producer
     ordering = ["-name"]
-    context_object_name = "allcars"
+    context_object_name = "allpp"

@@ -6,10 +6,17 @@
 {% endblock title %}
 
 {% block content %}
-<section>
-    <div>
-        <h2>{{ Producer.name }}<h2>
-        <h2>{{ Producer.carsp }}<h2>
+    <div class="logo">
+        <img src="" alt="Logo Image"> <!-- Insert your image URL here -->
     </div>
-</section>
+    <div class="company-name">{{ Producer.name }}</div>
+    <div class="card">
+        <img src="" alt="Card Image"> <!-- Insert your image URL here -->
+        <div class="card-text">
+            <p>car name</p>
+            <p>car price</p>
+            <p>car year pp</p>
+            <p>car speed</p>
+        </div>
+    </div>
 {% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "cars/base.html" %}
+{% load static %}
+
+{% block title %}
+All Coumpanies
+{% endblock title %}
+
+{% block content %}
+<section>
+    {% for Producer in allpp %}
+      <div>
+        <h2>{{ Producer.name }}</h2>
+        <h2>{{ Producer.carsp }}</h2>
+        </a>
+      </div>
+    {% endfor %}
+</section>
+{% endblock content %}
+
