@@ -9,6 +9,8 @@ All Coumpanies
 <section>
     {% for Producer in allpp %}
       <div>
+        <a href="{% url "single-companies" Producer.name %}">
+        <img src="{{ Producer.logo.url }}" alt="{{ Producer.name }}" width="300" height="200">
         <h2>{{ Producer.name }}</h2>
         <h2>{{ Producer.carsp }}</h2>
         </a>
