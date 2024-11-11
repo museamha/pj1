@@ -6,21 +6,22 @@
 {% endblock cssfiles %}
 
 {% block title %}
-{{ Producer.name }}
+{{ car.Producer.name }}
 {% endblock title %}
 
 {% block content %}
     <div class="logo">
-        <img src="{{ Producer.logo.url }}" alt="Logo Image"> <!-- Insert your image URL here -->
+        <img src="{{ car.Producer.logo.url }}" alt="Logo Image"> <!-- Insert your image URL here -->
     </div>
     <div class="company-name">{{ Producer.name }}</div>
     <div class="card">
-        <img src="{{ Producer.carsp.image.url }}" alt="Card Image"> <!-- Insert your image URL here -->
+        <img src="{{ car.Producer.image.url }}" alt="Card Image"> <!-- Insert your image URL here -->
         <div class="card-text">
-            <h2>{{ Producer.carsp.Proname }}</h2>
-            <h2>${{ Producer.carsp.price }}</h2>
-            <h3>{{ Producer.carsp.yearofpp }}</h3>
-            <h3>{{ Producer.carsp.stok }} units</h3>
+            <img src="{{ car.image.url }}" alt="{{ car.Proname }}" width="300" height="200">
+            <h2>{{ car.Proname }}</h2>
+            <h2>${{ car.price }}</h2>
+            <h3>{{ car.yearofpp }}</h3>
+            <h3>{{ car.stok }} units</h3>
         </div>
     </div>
 {% endblock content %}
