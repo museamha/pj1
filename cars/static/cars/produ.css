@@ -1,4 +1,4 @@
-body {
+        body {
             background-color: #8D9E9E;
             display: flex;
             flex-direction: column;
@@ -6,6 +6,14 @@ body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 40px;
         }
         .logo {
             width: 150px;
@@ -16,7 +24,6 @@ body {
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            margin-bottom: 20px;
         }
         .logo img {
             width: 100%;
@@ -25,7 +32,7 @@ body {
         .company-name {
             font-size: 36px;
             color: #21422A;
-            margin-bottom: 40px;
+            margin-left: 20px;
         }
         .card {
             width: 200px;
@@ -44,4 +51,3 @@ body {
             font-size: 16px;
             color: #333;
         }
- 

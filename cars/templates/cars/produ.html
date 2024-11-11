@@ -1,22 +1,26 @@
 {% extends "cars/base.html" %}
 {% load static %}
 
+{% block cssfiles %}
+ <link rel="stylesheet" href="{% static "cars/produ.css" %}">
+{% endblock cssfiles %}
+
 {% block title %}
 {{ Producer.name }}
 {% endblock title %}
 
 {% block content %}
     <div class="logo">
-        <img src="" alt="Logo Image"> <!-- Insert your image URL here -->
+        <img src="{{ Producer.logo.url }}" alt="Logo Image"> <!-- Insert your image URL here -->
     </div>
     <div class="company-name">{{ Producer.name }}</div>
     <div class="card">
-        <img src="{{ Producer.carsp.image }}" alt="Card Image"> <!-- Insert your image URL here -->
+        <img src="{{ Producer.carsp.image.url }}" alt="Card Image"> <!-- Insert your image URL here -->
         <div class="card-text">
-            <p>car name</p>
-            <p>car price</p>
-            <p>car year pp</p>
-            <p>car speed</p>
+            <h2>{{ Producer.carsp.Proname }}</h2>
+            <h2>${{ Producer.carsp.price }}</h2>
+            <h3>{{ Producer.carsp.yearofpp }}</h3>
+            <h3>{{ Producer.carsp.stok }} units</h3>
         </div>
     </div>
 {% endblock content %}
