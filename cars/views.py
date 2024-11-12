@@ -1,4 +1,4 @@
-from django.shortcuts import render , redirect
+from django.shortcuts import render , redirect, get_object_or_404
 from django.views.generic import ListView
 from django.views import View
 from .models import car, Producer
@@ -62,11 +62,15 @@ class ReadLaterView(View):
     
 class SingleProducersView(ListView):
     template_name = "cars/produ.html"
-    def get(self, request,name, *args, **kwargs):
-        sing = Producer.objects.get(name=name)
-        context = {"Producer": sing}
-        return render(request,self.template_name, context )
- 
+
+    def get(self, request, name, *args, **kwargs):
+        sing = get_object_or_404(Producer, name=name)
+        allcars = car.objects.filter(producer=sing)  # Adjust if the ForeignKey field name is different
+        context = {
+            "Producer": sing,
+            "allcars": allcars  # Pass the related cars to the template
+        }
+        return render(request, self.template_name, context)
 class ProducersView(ListView):
     template_name = "cars/allpp.html"
     model = Producer

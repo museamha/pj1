@@ -11,17 +11,20 @@
 
 {% block content %}
     <div class="logo">
-        <img src="{{ car.Producer.logo.url }}" alt="Logo Image"> <!-- Insert your image URL here -->
+        <img src="{{ Producer.logo.url }}" alt="Logo Image"> <!-- Insert your image URL here -->
     </div>
     <div class="company-name">{{ Producer.name }}</div>
     <div class="card">
-        <img src="{{ car.Producer.image.url }}" alt="Card Image"> <!-- Insert your image URL here -->
-        <div class="card-text">
-            <img src="{{ car.image.url }}" alt="{{ car.Proname }}" width="300" height="200">
-            <h2>{{ car.Proname }}</h2>
-            <h2>${{ car.price }}</h2>
-            <h3>{{ car.yearofpp }}</h3>
-            <h3>{{ car.stok }} units</h3>
+        {% for car in allcars %}
+        <div>
+          <a href="{% url "detail-page" car.slug %}">
+          <img src="{{ car.image.url }}" alt="{{ car.Proname }}" width="300" height="200">
+          <h2>{{ car.Proname }}</h2>
+          <h2>${{ car.price }}</h2>
+          <h3>{{ car.yearofpp }}</h3>
+          <h3>{{ car.stok }} units</h3>
+          </a>
         </div>
+      {% endfor %}    
     </div>
 {% endblock content %}
